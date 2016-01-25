@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="BlackScience"
+  id="myeclipse.1426659466396"
+  context-root="/"
+  j2ee-spec="6.0"
+  archive="BlackScience.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
