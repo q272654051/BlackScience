@@ -23,7 +23,7 @@ public class About implements java.io.Serializable {
 	private String name = "";          //名字
 	private String content = "";       //内容
 	private byte[] img;                //图片
-	private Integer status = 0;        //状态
+	private Integer status;            //状态
 	private Date date;                 //时间
 	private String remark = "";        //备注
 	

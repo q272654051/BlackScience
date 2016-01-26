@@ -65,7 +65,7 @@
                                                         <td>&nbsp;</td>
                                                         <td>介绍类型：</td>
                                                         <td>
-                                                            <select>
+                                                            <select id="name">
                                                                 <option value="">请选择...</option>
                                                                 <option value="公司简介">公司简介</option>
                                                                 <option value="公司文化">企业文化</option>
@@ -80,8 +80,8 @@
                                                         <td>&nbsp;</td>
                                                         <td>是否显示：</td>
                                                         <td>
-                                                            <input type="radio" name="is_hidden" value="1" /> 是 
-                                                            <input type="radio" name="is_hidden" value="0" /> 否
+                                                            <input type="radio" name="status" value="1" /> 是 
+                                                            <input type="radio" name="status" value="0" /> 否
                                                         </td>
                                                         <td>设置该介绍是否显示。</td>
                                                         <td>&nbsp;</td>
@@ -90,7 +90,16 @@
                                                         <td>&nbsp;</td>
                                                         <td>介绍图片：</td>
                                                         <td>
-                                                            <input type="file" name="image"  />
+                                                            <div class="col-md-2 pic-upload">
+										                        <a class="thumbnail" id="preview">
+										                            <img id="headpic" src="" alt="" width="250" height="150">
+										                        </a>
+										                        <div class="form-group file-upload">
+										                             <input type="file" name="exampleInputFile" id="exampleInputFile"/>
+										                        </div>
+										                        <!-- <p class="help-block">上传消息头图</p> -->
+										                        <input type="hidden" id="img" value=""/>
+										                    </div>
                                                         </td>
                                                         <td>在介绍中插入图片。</td>
                                                         <td>&nbsp;</td>
@@ -98,20 +107,20 @@
                                                     <tr>
                                                         <td>&nbsp;</td>
                                                         <td>介绍内容</td>
-                                                        <td><textarea id="content"></textarea></td>
+                                                        <td><textarea id="content"  rows="3" cols="20"></textarea></td>
                                                         <td>详细介绍的文字内容</td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
                                                         <td>&nbsp;</td>
                                                         <td>备注</td>
-                                                        <td><input type="text" name="remark"  /></td>
+                                                        <td><input type="text" id="remark"  /></td>
                                                         <td>关于添加的次介绍的备注</td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
                                                         <td>&nbsp;</td>
-                                                        <td colspan="3"><input class="btn" type="submit" value="提交" /></td>
+                                                        <td colspan="3"><input class="btn" type="button" id="confirm" value="提交" /></td>
                                                         <td>&nbsp;</td>
                                                     </tr>
                                                 </table>
@@ -155,5 +164,7 @@
                 </td>           
             </tr>
         </table>
+    <script type="text/javascript" src="content/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="content/js/jsp/back/about_add.js"></script>
     </body>
 </html>
