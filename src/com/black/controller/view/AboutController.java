@@ -54,8 +54,21 @@ public class AboutController {
 	 * @return
 	 */
 	@RequestMapping("about_add")
-	public ModelAndView login(){
+	public ModelAndView about_add(){
 		return new ModelAndView("back/about_add");
+	}
+	
+	/**
+	 * 
+	 * @author djx
+	 * @date 2016-1-26
+	 * @description 
+	 * @return
+	 *
+	 */
+	@RequestMapping("about_manage")
+	public ModelAndView about_manager(){
+		return new ModelAndView("back/about_manage");
 	}
 	
 	/**

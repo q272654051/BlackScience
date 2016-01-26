@@ -46,7 +46,7 @@
                         </table>
                         <ul class="RM">
                             <li><a href="aboutController/about_add" target="main">添加网站信息</a></li>
-                            <li><a href="./cat_manage.html" target="main">网站信息管理</a></li>
+                            <li><a href="aboutController/about_manage" target="main">网站信息管理</a></li>
                         </ul>
                     </div>
                     <h1 class="type"><a href="javascript:void(0)">产品管理</a></h1>
