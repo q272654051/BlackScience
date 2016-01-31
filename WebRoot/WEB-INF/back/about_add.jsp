@@ -80,7 +80,7 @@
                                                         <td>&nbsp;</td>
                                                         <td>是否显示：</td>
                                                         <td>
-                                                            <input type="radio" name="status" value="1" /> 是 
+                                                            <input type="radio" name="status" value="1" checked="checked"/> 是 
                                                             <input type="radio" name="status" value="0" /> 否
                                                         </td>
                                                         <td>设置该介绍是否显示。</td>
@@ -165,6 +165,7 @@
             </tr>
         </table>
     <script type="text/javascript" src="content/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="content/js/layer/layer.js"></script>
 	<script type="text/javascript" src="content/js/jsp/back/about_add.js"></script>
     </body>
 </html>

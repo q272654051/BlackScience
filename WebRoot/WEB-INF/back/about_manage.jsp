@@ -20,10 +20,10 @@
                 </td>
                 <td valign="top" background="content/Images/content_bg.gif">
                     <table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" background="content/Images/content_bg.gif">
-                        <tr><td height="31"><div class="title">添加栏目</div></td></tr>
+                        <tr><td height="31"><div class="title">网站信息</div></td></tr>
                     </table>
                 </td>
-                <td width="16" valign="top" background="content/Images/mail_right_bg.gif"><img src="./Images/nav_right_bg.gif" width="16" height="29" /></td>
+                <td width="16" valign="top" background="content/Images/mail_right_bg.gif"><img src="content/Images/nav_right_bg.gif" width="16" height="29" /></td>
             </tr>
             <!-- 中间部分开始 -->
             <tr>
@@ -39,7 +39,7 @@
                                 <table>
                                     <tr>
                                         <td width="100" align="center"><img src="content/Images/mime.gif" /></td>
-                                        <td valign="bottom"><h3 style="letter-spacing:1px;">在这里，您可以根据您的需求，填写网站参数！</h3></td>
+                                        <td valign="bottom"><h3 style="letter-spacing:1px;">在这里，您可以根据您的需求，管理网站关于页面信息！</h3></td>
                                     </tr>
                                 </table>
                             </td>
@@ -59,92 +59,32 @@
                                 <table width="100%">
                                     <tr>
                                         <td colspan="2">
-                                            <form action="" method="">
-                                                <table width="100%"  class="cont tr_color">
-                                                    <tr>
-                                                        <th>排序</th>
-                                                        <th>栏目名称</th>
-                                                        <th>栏目类型</th>
-                                                        <th>显示/隐藏</th>
-                                                        <th>栏目位置</th>
-                                                        <th>操作</th>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>1</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>2</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>3</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>4</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>5</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>6</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>7</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>5</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                    <tr align="center" class="d">
-                                                        <td>6</td>
-                                                        <td>公司首页</td>
-                                                        <td>链接</td>
-                                                        <td>显示</td>
-                                                        <td>顶部底部</td>
-                                                        <td>编辑 删除 内容管理</td>
-                                                    </tr>
-                                                </table>
-                                            </form>
+                                            <table width="100%"  class="cont tr_color">
+                                                <tr>
+                                                    <th width="10%">介绍名称</th>
+                                                    <th width="10%">显示/隐藏</th>
+                                                    <th width="30%">介绍内容</th>
+                                                    <th width="20%">图片</th>
+                                                    <th width="10%">操作时间</th>
+                                                    <th width="10%">备注</th>
+                                                    <th width="10%">操作</th>
+                                                </tr>
+                                                <tbody id="aboutTbodyList">
+                                                <!-- <tr align="center" class="d">
+                                                    <td>公司首页</td>
+                                                    <td>显示</td>
+                                                    <td>链接</td>
+                                                    <td>链接</td>
+                                                    <td>链接</td>
+                                                    <td>顶部底部</td>
+                                                    <td>编辑 删除 内容管理</td>
+                                                </tr> -->
+                                                </tbody>
+                                            </table>
                                         </td>
                                     </tr>
+                                    <tr><div id="pageUI"></div>
+                        			</tr>
                                 </table>
                             </td>
                             <td width="2%">&nbsp;</td>
@@ -182,5 +122,8 @@
                 </td>           
             </tr>
         </table>
+    <script type="text/javascript" src="content/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="content/js/layer/layer.js"></script>
+	<script type="text/javascript" src="content/js/jsp/back/about_manager.js"></script>
     </body>
 </html>

@@ -17,7 +17,7 @@ public class User implements java.io.Serializable {
 	private String userId = "";        //用户ID
 	private String userName = "";      //用户名
 	private String pwd = "";           //密码
-	private String name = "";      //名字
+	private String name = "";          //名字
 	private String phone = "";         //电话
 	private String email = "";         //邮箱
 	private Integer status = 0;        //状态

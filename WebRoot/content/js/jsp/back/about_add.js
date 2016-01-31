@@ -74,12 +74,14 @@ $("#confirm").bind("click",function(){
 	var remark = $("#remark").val();
 	var status = $('input[name="status"]:checked').val();
 	
-	console.log(name);
-	console.log(img);
-	console.log(content);
-	console.log(remark);
-	console.log(status);
-	
+	if (name=="" || name=="undefined"){
+		layer.msg('请选择介绍类型', {icon: 5, time: 1000});
+		return;
+	}
+	if (img=="" || content==""){
+		layer.msg('请选择照片或填写介绍内容', {icon: 5, time: 1000});
+		return;
+	}
 	$.ajax({
 	    type: "post",
         url: "aboutController/saveOrupdateAbout",
@@ -94,14 +96,14 @@ $("#confirm").bind("click",function(){
         dataType: "json",
         success: function(data){
         	if(data['success']){
-        		alert("成功");
+        		layer.msg('成功', {icon: 6, time: 1000});
         		//window.location.href = "aboutController/toSysMain";  //加载主页面
         	}else{
-        		alert("失败");
+        		layer.msg('失败', {icon: 5, time: 1000});
         	}
         },
         error: function(data){
-        	alert("失败");
+        	layer.msg('失败', {icon: 5, time: 1000});
         }
     });
 	

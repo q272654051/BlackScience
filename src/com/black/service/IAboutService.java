@@ -1,8 +1,10 @@
 package com.black.service;
 
 import java.io.Serializable;
+import java.util.Map;
 
 import com.black.commons.dao.IBaseDAO;
+import com.black.commons.util.Pager;
 import com.black.vo.About;
 
 
@@ -24,4 +26,5 @@ public interface IAboutService extends IBaseDAO<About, Serializable>{
 	//
 	public About findAboutByName(String name);
 	
+	public Pager findByHQLQuery(Map<String, Object> map, Pager pager);
 }

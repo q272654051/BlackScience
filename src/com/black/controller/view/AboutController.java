@@ -15,7 +15,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.black.commons.util.ContentUtil;
 import com.black.commons.util.JsonUtil;
+import com.black.commons.util.Pager;
+import com.black.commons.util.PagerParam;
 import com.black.service.IAboutService;
 import com.black.service.IUserService;
 import com.black.vo.About;
@@ -104,5 +107,32 @@ public class AboutController {
 		printWriter.print(JsonUtil.jsonObject(result_map, null, null));
 		printWriter.flush();
 		printWriter.close();
+	}
+	
+	/**
+	 * 
+	 * @author djx
+	 * @date 2016-1-31
+	 * @description 
+	 * @param request
+	 * @param response
+	 * @param printWriter
+	 *
+	 */
+	@RequestMapping("loadAboutMessage")
+	public void loadAboutMessage(HttpServletRequest request,HttpServletResponse response, PrintWriter printWriter) {
+		Pager pagers = null;
+//		String name = request.getParameter("name");//关于页面的名称
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		pagers = PagerParam.getPagerParam(request, pagers);
+		/*if (StringUtils.isNotBlank(name)) {
+			map.put("name", name);
+		}*/
+		Pager result = aboutService.findByHQLQuery(map, pagers);
+		String param = JsonUtil.jsonObject(result, new String[] {}, ContentUtil.YMDHMS);
+		printWriter.print(param);
+		printWriter.flush();
+        printWriter.close();
 	}
 }

@@ -22,7 +22,7 @@ public class About implements java.io.Serializable {
 	private String aboutId = "";        //ID
 	private String name = "";          //名字
 	private String content = "";       //内容
-	private byte[] img;                //图片
+	private String img;                //图片
 	private Integer status;            //状态
 	private Date date;                 //时间
 	private String remark = "";        //备注
@@ -35,7 +35,7 @@ public class About implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public About(String aboutId, String name, String pwd, String content, byte[] img, 
+	public About(String aboutId, String name, String pwd, String content, String img, 
 			String remark, Integer status, Date date) {
 		this.aboutId = aboutId;
 		this.name = name;
@@ -76,11 +76,11 @@ public class About implements java.io.Serializable {
 	}
 
 	@Column(name = "img",columnDefinition = "BLOB",nullable=true)
-	public byte[] getImg() {
+	public String getImg() {
 		return img;
 	}
 
-	public void setImg(byte[] img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 

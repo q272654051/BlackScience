@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.black.commons.util.Base64andMD5Util;
 import com.black.commons.util.JsonUtil;
+import com.black.commons.util.SessionOperateUtil;
 import com.black.service.IUserService;
 import com.black.vo.User;
 
@@ -48,9 +49,9 @@ public class LoginController {
 						result_map.put("success", true);
 						result_map.put("data", user);
 						result_map.put("msg", "登录成功");
-						request.getSession().setAttribute("userId",user.getUserId()+"");         //存储登陆人id
+						//request.getSession().setAttribute("userId",user.getUserId()+"");         //存储登陆人id
 						request.getSession().setMaxInactiveInterval(3600);                           //设置超时时间3600s
-						//SessionOperateUtil.setSessionAttribute("user_info", user);
+						request.getSession().setAttribute("user_info", user);               //存储登陆人信息
 					} else {
 						result_map.put("success", false);
 						result_map.put("msg", "密码错误");

@@ -78,6 +78,7 @@
         <tr id="login_bot"><td colspan="2"><p>Copyright © 2016-2018 BlackScience 网络工作室</p></td></tr>
     </table>
 <script type="text/javascript" src="content/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="content/js/layer/layer.js"></script>
 <script type="text/javascript" src="content/js/jsp/back/login.js"></script>
 </body>
 </html>

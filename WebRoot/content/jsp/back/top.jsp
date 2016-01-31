@@ -10,10 +10,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <base href="<%=basePath%>"/>
     <link rel="stylesheet" type="text/css" href="content/Style/skin.css" />
+    <script type="text/javascript" src="content/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="content/js/layer/layer.js"></script>
     <script type="text/javascript">
         function logout() {
+	        /* layer.confirm('确定要退出吗？', {icon: 3, title:'提示'}, function(index){
+				    top.location = '/back';
+				    layer.close(index);
+				}); */
             if(window.confirm('您确定要退出吗？')) {
-                top.location = 'login.html';
+                top.location = '/back';
             }
         }       
     </script>
@@ -22,8 +28,8 @@
         <table cellpadding="0" width="100%" height="64" background="content/Images/top_top_bg.gif">
             <tr valign="top">
                 <td width="50%"><a href="javascript:void(0)"><img style="border:none" src="content/Images/logo.png" /></a></td>
-                <td width="30%" style="padding-top:13px;font:15px Arial,SimSun,sans-serif;color:#FFF">管理员：<b>RainMan</b> 您好，感谢登陆使用！</td>
-                <td style="padding-top:10px;" align="center"><a href="javascript:void(0)"><img style="border:none" src="content/Images/index.gif" /></a></td>
+                <td width="30%" style="padding-top:13px;font:15px Arial,SimSun,sans-serif;color:#FFF">管理员：<b>${user_info.name }</b> 您好，感谢登陆使用！</td>
+                <td style="padding-top:10px;" align="center"><a href="/" target="_blank"><img style="border:none" src="content/Images/index.gif" /></a></td>
                 <td style="padding-top:10px;" align="center"><a href="javascript:void(0)"><img style="border:none" src="content/Images/out.gif" onclick="logout();" /></td>
             </tr>
         </table>
