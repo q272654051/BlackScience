@@ -24,6 +24,16 @@
   </mvc:annotation-driven>
   <mvc:resources location="/resources/" mapping="/resources/**" />
   
+    <mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/js/" />
+			<mvc:mapping path="/js/**" />
+			<bean class="com.black.commons.intreceptor.MyInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<mvc:interceptors>
+			<bean class="com.black.commons.intreceptor.MyInterceptor"></bean>
+	</mvc:interceptors>
 	<!-- 配置静态资源访问 -->
 	<mvc:resources mapping="/**" location="/" />
 	<mvc:default-servlet-handler />
