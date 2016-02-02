@@ -3,6 +3,8 @@ package com.black.commons.intreceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.black.vo.User;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Iterator;
@@ -55,42 +57,41 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
                              HttpServletResponse response, Object handler) throws Exception {
 
             // 1.获取用户
-            String user_info = (String) request.getSession().getAttribute("user_info");
+            User user_info = (User) request.getSession().getAttribute("user_info");
             String request_Url = request.getRequestURL().toString();//请求的链接
             String reg = ".*\\.(?i)(jpg|js|png|css|gif)";
             //静态资源不进行验证
             if(request_Url.matches(reg)){
                 return true;
             }
-            String ResultType ="";
             if (null == user_info || "".equals(user_info)) {// 如果用户为空(同等于session过期操作)
-                String url = request_Url.substring(request_Url.lastIndexOf("/"), request_Url.length()).replace(".do","");
-                if(url.indexOf("_grzx")!=-1){//个人中心 session过期后操作
-                    ResultType="_grzx";
-                }
-                // 跳到首页
-                if (url.indexOf("index") == -1
-                        && url.indexOf("_noLogin") == -1
-                        && url.indexOf(".") == -1) {// 不需要登录就能进入的页面
-                    Map map = request.getParameterMap();
-                    String params = "";// 参数
-                    if (null != map && map.size() > 0) {
-                        Iterator it = map.keySet().iterator();
-                        while (it.hasNext()) {
-                            String key = "";
-                            String[] value;
-                            key = it.next().toString();
-                            value = (String[]) map.get(key);
-                            params += key + "=" + value[0] + "&";
-                        }
-                        response.sendRedirect(request.getContextPath()+"/back?ResultUrl=" + request.getRequestURL() + "?" + params.substring(0, params.length() - 1));
-                        return false;
-                    } else {
-                        response.sendRedirect(request.getContextPath() + "/back?ResultUrl=" + request.getRequestURL());
-                        return false;
-                    }
-                } else {
-                    return true;
+                //String url = request_Url.substring(request_Url.lastIndexOf("/"), request_Url.length()).replace(".do","");
+                String url = request_Url;
+                if(url.indexOf("back")==-1){//个人中心 session过期后操作
+                	return true;
+                }else{
+                	String backUrl = url.substring(url.lastIndexOf("back"), url.length()-4);
+                	if (backUrl.length()>0){
+                		Map map = request.getParameterMap();
+                		String params = "";// 参数
+                		if (null != map && map.size() > 0) {
+                			Iterator it = map.keySet().iterator();
+                			while (it.hasNext()) {
+                				String key = "";
+                				String[] value;
+                				key = it.next().toString();
+                				value = (String[]) map.get(key);
+                				params += key + "=" + value[0] + "&";
+                			}
+                			response.sendRedirect(request.getContextPath()+"/back?ResultUrl=" + request.getRequestURL() + "?" + params.substring(0, params.length() - 1));
+                			return false;
+                		} else {
+                			response.sendRedirect(request.getContextPath() + "/back?ResultUrl=" + request.getRequestURL());
+                			return false;
+                		}
+                	}else{
+                		return true;
+                	}
                 }
             } else {
                 return true;

@@ -6,7 +6,7 @@ function loadAbout(curPage){
 	$.ajax({
         type: "POST",
         url: "aboutController/loadAboutMessage",
-        data: "pageSize=10&curPage=" + curPage,
+        data: "pageSize=5&curPage=" + curPage,
         dataType: "json",
         success: function (msg) {
             var listTr = $("#aboutTbodyList");
@@ -16,17 +16,6 @@ function loadAbout(curPage){
 	            for (var i = 0; i < data.list.length; i++) {
 	            	console.log(data.list[i].img);
 	            	if (data.list[i].status == '1'){
-	            		listTr.append("<tr align='center' class='d'><td>" + data.list[i].name + "</td><td>隐藏</td><td>" 
-	            				+ data.list[i].content + "</td><td><img height='60px' wight='100px' src=" + data.list[i].img + "></td><td>" 
-	            				+ data.list[i].date + "</td><td>" + data.list[i].remark + "</td><td>"
-			            		+ "<a href='aboutController/toYaPinGuanLiDetails?curPage="
-			            		+ curPage
-			            		+ "&aboutId=" 
-			            		+ data.list[i].aboutId + "'>显示</a>"
-			            		+ "/<a href='aboutController/toYaPinGuanLiUpdate?yaPinId=" 
-			            		+ data.list[i].YaPinId + "'>编辑</a>"
-			            		+"</td></tr>");
-	            	}else{
 	            		listTr.append("<tr align='center' class='d'><td>" + data.list[i].name + "</td><td>显示</td><td>" 
 	            				+ data.list[i].content + "</td><td><img height='60px' wight='100px' src=" + data.list[i].img + "></td><td>" 
 	            				+ data.list[i].date + "</td><td>" + data.list[i].remark + "</td><td>"
@@ -34,6 +23,17 @@ function loadAbout(curPage){
 			            		+ curPage
 			            		+ "&aboutId=" 
 			            		+ data.list[i].aboutId + "'>隐藏</a>"
+			            		+ "/<a href='aboutController/toYaPinGuanLiUpdate?yaPinId=" 
+			            		+ data.list[i].YaPinId + "'>编辑</a>"
+			            		+"</td></tr>");
+	            	}else{
+	            		listTr.append("<tr align='center' class='d'><td>" + data.list[i].name + "</td><td>隐藏</td><td>" 
+	            				+ data.list[i].content + "</td><td><img height='60px' wight='100px' src=" + data.list[i].img + "></td><td>" 
+	            				+ data.list[i].date + "</td><td>" + data.list[i].remark + "</td><td>"
+			            		+ "<a href='aboutController/toYaPinGuanLiDetails?curPage="
+			            		+ curPage
+			            		+ "&aboutId=" 
+			            		+ data.list[i].aboutId + "'>显示</a>"
 			            		+ "/<a href='aboutController/toYaPinGuanLiUpdate?yaPinId=" 
 			            		+ data.list[i].YaPinId + "'>编辑</a>"
 			            		+"</td></tr>");

@@ -83,7 +83,7 @@
                                             </table>
                                         </td>
                                     </tr>
-                                    <tr><div id="pageUI"></div>
+                                    <tr><td colspan="2" align="right"><div id="pageUI"></td></div>
                         			</tr>
                                 </table>
                             </td>
